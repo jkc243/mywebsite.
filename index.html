@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<style>
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body, ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f0f0f0; 
+    padding-bottom: 50px;
+  }
+  
+  header, footer {
+    background-color: #8d72b2;
+    color: #fff;
+    padding: 1rem;
+    text-align: right;
+    position: fixed;
+    width: 99%;
+    z-index: 100;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+  }
+  
+  header h1 {
+    font-size: 1.5rem; 
+    margin: 0;
+  }
+  
+  nav ul {
+    display: flex;
+  }
+  
+  nav ul li {
+    margin: 10px; 
+  }
+  
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+  
+  nav ul li a:hover {
+    color: #654c85;
+  }
+  
+  section {
+    font-family: 'Times New Roman', Times, serif;
+    padding: 50px 30px; 
+    min-height: 70vh;
+    text-align: center;
+    background-color: #fff; 
+  }
+  
+  #home {
+    background: url('https://i.pinimg.com/736x/87/6a/71/876a71b3cc0761aa40ccbe6cf2e8fef0.jpg') no-repeat center center/cover;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 89vh;
+  }
+  
+  #home h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px; 
+  }
+  
+  #home p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 15px 0; 
+  }
+  
+  .button {
+    border: #654c85;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+  }
+  
+  .button1 {
+    background-color: #8d72b2;
+    color: white;
+    border: 2px solid #744a83;
+  }
+  
+  .button1:hover {
+    background-color: #744a83;
+    color: #b9a6d5;
+  }
+  
+  #about {
+    background: url('https://i.pinimg.com/736x/5a/73/49/5a73494a0805222d1ebef4096924ecd0.jpg') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: 	#b9a6d5;
+    text-align: left;
+    padding: 30px;
+    min-height: 99vh;
+    margin-top: 0;
+    font-size: 1.2rem;
+  }
+  
+  .about-content h1 {
+    text-align: center;
+  }
+  
+  #about .slideshow {
+    width: 40%;
+    height: 55vh;
+    overflow: hidden;
+    position: relative; 
+  }
+  
+  #about .slideshow img {
+    width: 70%;
+    height: 96%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    margin-left: 50px; 
+  }
+  
+  img {
+    box-shadow: 25px 25px 35px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    border: 5px solid #744a83;
+    border-radius: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  #about .slideshow img.active {
+    opacity: 1;
+  }
+  
+  #about .about-content {
+    width: 80%;
+    margin-left: 50px;
+    margin-left: 20px; 
+    margin-top: -100px;  
+  }
+  
+  .wavy-line {
+    position: relative;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .wavy-line::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 10px;
+    background: linear-gradient(to right, #9a2dda, #bc4ce9);
+    background-size: 200% 100%;
+    animation: wave-animation 2s ease-in-out infinite;
+  }
+  
+  @keyframes wave-animation {
+    0% {
+    background-position: 200% 0;
+      }
+     100% {
+     background-position: -200% 0;
+      }
+  }
+  
+  #hobbies {
+    background: url('https://i.pinimg.com/736x/cb/af/7f/cbaf7f135ad43bc3b2a25688a98d240b.jpg') no-repeat center center/cover;
+    color: #fff;
+    display: flex;
+    font-size: 1.2rem;
+    flex-direction: column;
+    justify-content: top;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+  }
+  
+  #hobbies {
+    background-color: #e8def0;
+    text-align: center;
+    padding: 100px 30px;
+  }
+  
+  .hobby-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 100px;
+    margin-top: 20px;
+  }
+
+  .hobby-box {
+    transition: transform 0.5s ease, opacity 0.5s ease;
+  }
+  
+  .hobby-box:hover {
+    transform: translateY(-10px); 
+    opacity: 0.8; 
+}
+
+@keyframes hobbyAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+  hobby-box {
+    animation: hobbyAnimation 1s ease-out forwards;
+}
+
+  .hobby-icon {
+    width: 280px;
+    height: 275px;
+    position: relative;
+  }
+  
+  .hobby-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .hobby-texts {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+  }
+  
+  .hobby-text {
+    width: 23rem;
+    width: 31%;
+    text-align: center;
+    font-size: 0.9rem;
+    padding: 5px;
+    background-color: rgba(173, 69, 214, 0.705); 
+    border-radius: 15px;
+  
+  }
+  
+  .hobby-text strong {
+    font-size: 1.1rem;
+    color: white;
+  }
+  
+  .hobby-text p {
+    margin-top: 10px;
+  }
+  
+  .contact-section {
+    background: url('https://i.pinimg.com/736x/2e/eb/cc/2eebcca80a7124add95312e5da43bac0.jpg') no-repeat center center/cover;
+    padding: 80px;
+    text-align: bottom;
+  }
+
+  .contact-section h1 {
+    color: white;
+  }
+
+  .contact-section p {
+    font-size: 1rem;
+    color: white;
+  }
+
+  .social-links {
+    display: flex;
+    justify-content: center;
+    margin-top: 290px;
+  }
+
+  .social-link {
+    font-size: 1rem;
+    color: rgb(201, 115, 241);
+    text-decoration: none;
+    margin: 15px;
+    display: flex;
+    align-items: center;
+  }
+
+.social-link i {
+  font-size: 2rem;
+  margin-right: 15px;
+}
+
+.social-link:hover {
+  color: #bc4ce9; 
+}
+
+
+.facebook, .instagram {
+  margin-top: 20px;
+}
+
+footer {
+  position: relative;
+  bottom: 0;
+  background-color: #654c85;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+}
+  
+footer p {
+  margin: 0;
+  font-size: 0.8rem;
+}
+</style>
+  
+</head>
+<body>
+  <header>
+    <h1>Jk's Website</h1>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#hobbies">Hobbies</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="home">
+    <h1>•°•°• Welcome to My Website •°•°•</h1>
+    <p>This is where I share a little bit about myself—my hobbies, interests, and so on. Take a look around, and don’t be shy to connect if something catches your eye. Let’s make this visit worth your time!</p>
+    <button class="button button1" onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'});">About Me</button>
+  </section>
+
+  <section id="about">
+    <div class="slideshow">
+      <img src="https://i.pinimg.com/736x/02/32/72/023272936ada577efe9de6d4b3169f1a.jpg" alt="Slide 1" class="active"> 
+      <img src="https://i.pinimg.com/736x/3e/03/f3/3e03f35ae62c0ede9bf0b7dda59dac18.jpg" alt="Slide 2">
+    </div>
+    <div class="about-content">
+      <h1>˚　　　　. ✦　　　 　 . ★⋆.
+        　　　.   　　˚　　 　　　　　.　　.　　　✦˚　✦ About Me ✦　.　　.　 ˚　.</h1>
+      <p class="wavy-line"></p>
+      <p class="wavy-line">Hello, I'm Johara Katrina Balayboa, 18 years old, a freshman studying Information Systems with a focus on Java programming and website development at DFCAMCLP - Satellite Campus.</p>
+      <p class="wavy-line">As an ambivert, I enjoy socializing when the situation feels right, but I also need some quiet time to recharge and reflect on things.</p>
+      <p class="wavy-line">In my free time, I enjoy reading stories/poems, scrolling through TikTok, and watching K-drama/Thai series. I'm also really into music, sunsets, city lights, and finding peaceful spots to relax. Most importantly, I enjoy spending time with my loved ones.</p>
+    </div>
+</section>
+
+<section id="hobbies">
+  <h1>Hobbies</h1>
+  <div class="hobby-container">
+    <div class="hobby-icon">
+      <img src="https://i.pinimg.com/736x/39/66/39/396639f9b6117570fa93f380f914f67d.jpg" alt="Hobby 1">
+    </div>
+    <div class="hobby-icon">
+      <img src="https://i.pinimg.com/736x/b8/ed/6f/b8ed6fb3f83ce8bd40daa59a19f3b5f7.jpg" alt="Hobby 2">
+    </div>
+    <div class="hobby-icon">
+      <img src="https://i.pinimg.com/736x/8f/43/c9/8f43c9abf89018c80f61a000b4213661.jpg" alt="Hobby 3">
+    </div>
+  </div>
+ 
+  <div class="hobby-texts">
+    <div class="hobby-text">
+      <strong>Listening to Music 🎶</strong>
+      <p>I love listening to music from different artists, but my favorite is Ariana Grande. Her songs give me energy and brighten up my day, especially when I need a little boost. Aside from Ariana, I enjoy exploring music from other artists too—it depends on my mood. Music has a way of setting my vibe—it can be relaxing, motivating, or even nostalgic. Whether I’m studying, relaxing, music is always with me.</p>
+    </div>
+    <div class="hobby-text">
+      <strong>Reading Stories or Poems 📚</strong>
+      <p>I also enjoy reading, especially when I have nothing else to do or need a break from social media. Stories and poems take me to another world and let me escape for a while. I love how they make me think and give me new perspectives. It’s a simple way to spend my free time.</p>
+    </div>
+    <div class="hobby-text">
+      <strong>Watching K-Dramas 🎬</strong>
+      <p>I like watching K-Dramas to relax and unwind. There’s just something about their storytelling and characters that keeps me hooked, whether I’m laughing, crying, or just enjoying the moment. From romantic comedies to thrillers, there’s always a show that fits my mood. Watching them has also sparked my curiosity about Korean culture.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact-section">
+  <h1>Contact Me</h1>
+  <p>Feel free to reach out to me anytime, I’m always open to new connections!</p>
+  <div class="social-links">
+      <a href="https://www.facebook.com/jk.balayboa" class="social-link facebook">
+        <i class="fab fa-facebook"></i>Facebook
+      </a>
+      <a href="https://www.instagram.com/_araaaaaah/profilecard/?igsh=MWxqa284ZndlaDl3eg==" class="social-link instagram">
+        <i class="fab fa-instagram"></i>Instagram
+      </a>
+  </div>
+</section>
+
+  <footer>
+    <p>&copy; 2024 My Website. All rights reserved.</p>
+  </footer>
+  <script>
+ 
+const slideshowImages = document.querySelectorAll('#about .slideshow img');
+let currentIndex = 0;
+
+function changeImage() {
+  slideshowImages[currentIndex].classList.remove('active');
+  currentIndex = (currentIndex + 1) % slideshowImages.length;
+  slideshowImages[currentIndex].classList.add('active');
+}
+
+setInterval(changeImage, 3000); 
+
+  </script>
+</body>
+</html>
